@@ -8,11 +8,14 @@ function createTag(tag, classes) {
   return el;
 }
 
-function createTextPage(englishText) {
+function createTextPage(title, text) {
   body.innerHTML = "";
-  const title = createTag("h3", "titleText");
-  title.innerHTML = englishText.title;
-  body.appendChild("title");
+  const titleInner = createTag("h3", "titleText");
+  titleInner.innerHTML = title;
+  body.appendChild(titleInner);
+  const textInner = createTag("div", "text-inner");
+  textInner.innerHTML = text;
+  body.appendChild(textInner);
 }
 
 function createMenu() {
@@ -28,10 +31,12 @@ function createMenu() {
   const buttonsContainer = createTag("div", "buttonsContainer");
   menu.appendChild(buttonsContainer);
 
-  function createButtonMenu(text) {
+  function createButtonMenu(engText) {
     const buttonMenu = createTag("button", "buttonMenu");
-    buttonMenu.innerHTML = text.title;
-    buttonMenu.addEventListener("click", createTextPage);
+    buttonMenu.innerHTML = engText.title;
+    buttonMenu.addEventListener("click", () => {
+      createTextPage(engText.title, engText.text);
+    });
     return buttonsContainer.appendChild(buttonMenu);
   }
 

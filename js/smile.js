@@ -1,0 +1,15 @@
+export const SMILES = {
+  one: "1️⃣",
+  two: "2️⃣",
+  three: "3️⃣",
+  four: "4️⃣",
+  five: "5️⃣",
+  six: "6️⃣",
+  seven: "7️⃣",
+  eight: "8️⃣",
+  nine: "9️⃣",
+  ten: "🔟",
+  family: "👪",
+  tea: "🍵",
+  spoon: "🥄",
+};
